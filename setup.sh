@@ -26,6 +26,9 @@ EXTRA_IMAGE_FEATURES ?= "debug-tweaks"
 IMAGE_INSTALL:append = " i2c-tools"
 IMAGE_INSTALL:append = " kernel-modules"
 
+# Wifi/BT license
+LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
+
 PATCHRESOLVE = "noop"
 BB_DISKMON_DIRS ??= "\
     STOPTASKS,${TMPDIR},1G,100K \
@@ -61,6 +64,7 @@ BBLAYERS:append = " ${SOURCES_PATH}/poky/meta "
 BBLAYERS:append = " ${SOURCES_PATH}/poky/meta-poky "
 BBLAYERS:append = " ${SOURCES_PATH}/poky/meta-yocto-bsp "
 BBLAYERS:append = " ${SOURCES_PATH}/meta-raspberrypi "
+BBLAYERS:append = " ${SOURCES_PATH}/meta-rpi4-rpi-cam-mipi "
 ' > build/conf/bblayers.conf
 
 #=======================
