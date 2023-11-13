@@ -1,0 +1,7 @@
+# generated folders and files
+activate.sh
+build
+**/sources/*
+# do not exclude our meta folder
+!**/sources/meta-rpi4-rpi-cam-mipi
+
